@@ -8,7 +8,8 @@
   ],
   "scripts": {
     "build": "yarn workspaces foreach -At run build",
-    "test": "yarn workspace @yaroslavfed/bot-sdk test && yarn workspace @yaroslavfed/bot-sdk-nestjs test"
+    "test": "yarn workspace @yaroslavfed/bot-sdk test && yarn workspace @yaroslavfed/bot-sdk-nestjs test",
+    "pack:local": "yarn build && node --input-type=module -e \"import { mkdirSync } from 'node:fs'; mkdirSync('artifacts', { recursive: true })\" && yarn workspace @yaroslavfed/bot-sdk pack --out ../../artifacts/bot-sdk.tgz && yarn workspace @yaroslavfed/bot-sdk-nestjs pack --out ../../artifacts/bot-sdk-nestjs.tgz"
   },
   "devDependencies": {
     "@types/node": "^24.0.0",
