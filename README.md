@@ -6,5 +6,5 @@ SDK и общие контракты для backend-ботов Elph.
 
 - `contracts/` содержит версионированные схемы и fixtures Bot API
 - `go/` содержит Go SDK
-- `examples/` содержит runnable examples
-- `typescript/` зарезервирован для TypeScript и NestJS SDK
+- `go/examples/` содержит runnable пример Go-бота
+- `typescript/` содержит TypeScript client, NestJS integration и runnable пример NestJS-бота

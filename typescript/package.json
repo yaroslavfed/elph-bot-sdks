@@ -1,0 +1,17 @@
+{
+  "name": "elph-bot-sdks-typescript",
+  "private": true,
+  "packageManager": "yarn@4.3.1",
+  "workspaces": [
+    "packages/*",
+    "examples/*"
+  ],
+  "scripts": {
+    "build": "yarn workspaces foreach -At run build",
+    "test": "yarn workspace @elph-chat/bot-sdk test && yarn workspace @elph-chat/bot-sdk-nestjs test"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.7.3"
+  }
+}
