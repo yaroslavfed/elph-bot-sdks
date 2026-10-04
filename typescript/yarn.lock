@@ -12,23 +12,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@elph-chat/bot-sdk-nestjs@workspace:*, @elph-chat/bot-sdk-nestjs@workspace:packages/nestjs":
-  version: 0.0.0-use.local
-  resolution: "@elph-chat/bot-sdk-nestjs@workspace:packages/nestjs"
-  dependencies:
-    "@elph-chat/bot-sdk": "workspace:*"
-  peerDependencies:
-    "@nestjs/common": ^11.0.0
-    "@nestjs/core": ^11.0.0
-  languageName: unknown
-  linkType: soft
-
-"@elph-chat/bot-sdk@workspace:*, @elph-chat/bot-sdk@workspace:packages/core":
-  version: 0.0.0-use.local
-  resolution: "@elph-chat/bot-sdk@workspace:packages/core"
-  languageName: unknown
-  linkType: soft
-
 "@lukeed/csprng@npm:^1.0.0":
   version: 1.1.0
   resolution: "@lukeed/csprng@npm:1.1.0"
@@ -112,6 +95,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@yaroslavfed/bot-sdk-nestjs@workspace:*, @yaroslavfed/bot-sdk-nestjs@workspace:packages/nestjs":
+  version: 0.0.0-use.local
+  resolution: "@yaroslavfed/bot-sdk-nestjs@workspace:packages/nestjs"
+  dependencies:
+    "@yaroslavfed/bot-sdk": "workspace:*"
+  peerDependencies:
+    "@nestjs/common": ^11.0.0
+    "@nestjs/core": ^11.0.0
+  languageName: unknown
+  linkType: soft
+
+"@yaroslavfed/bot-sdk@workspace:*, @yaroslavfed/bot-sdk@workspace:packages/core":
+  version: 0.0.0-use.local
+  resolution: "@yaroslavfed/bot-sdk@workspace:packages/core"
+  languageName: unknown
+  linkType: soft
+
 "debug@npm:^4.4.3":
   version: 4.4.3
   resolution: "debug@npm:4.4.3"
@@ -184,10 +184,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "nestjs-echo-bot-example@workspace:examples/nestjs-echo-bot"
   dependencies:
-    "@elph-chat/bot-sdk": "workspace:*"
-    "@elph-chat/bot-sdk-nestjs": "workspace:*"
     "@nestjs/common": "npm:^11.0.0"
     "@nestjs/core": "npm:^11.0.0"
+    "@yaroslavfed/bot-sdk": "workspace:*"
+    "@yaroslavfed/bot-sdk-nestjs": "workspace:*"
     reflect-metadata: "npm:^0.2.2"
     rxjs: "npm:^7.8.1"
   languageName: unknown

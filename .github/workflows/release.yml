@@ -57,11 +57,12 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      packages: write
     defaults:
       run:
         working-directory: typescript
     env:
-      YARN_NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      YARN_NPM_AUTH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -83,8 +84,8 @@ jobs:
           version="$(node -p "require('./packages/core/package.json').version")"
           npm_tag=latest
           if [[ "$version" == *-* ]]; then npm_tag=next; fi
-          yarn workspace @elph-chat/bot-sdk npm publish --access public --tag "$npm_tag"
-          yarn workspace @elph-chat/bot-sdk-nestjs npm publish --access public --tag "$npm_tag"
+          yarn workspace @yaroslavfed/bot-sdk npm publish --access public --tag "$npm_tag"
+          yarn workspace @yaroslavfed/bot-sdk-nestjs npm publish --access public --tag "$npm_tag"
 
   github-release:
     name: Create GitHub Release

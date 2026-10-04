@@ -1,4 +1,4 @@
-import type { BotUpdate, ElphBotClientOptions } from '@elph-chat/bot-sdk';
+import type { BotUpdate, ElphBotClientOptions } from '@yaroslavfed/bot-sdk';
 
 export interface ElphBotModuleOptions extends ElphBotClientOptions {
   webhookUrl?: string;

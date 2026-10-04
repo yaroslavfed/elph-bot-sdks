@@ -4,15 +4,15 @@ SDK помогает backend-приложению принимать событ�
 
 В репозитории есть два пакета:
 
-- `@elph-chat/bot-sdk` содержит TypeScript client для Bot API, модели и проверку подписи webhook
-- `@elph-chat/bot-sdk-nestjs` добавляет NestJS-модуль, HTTP endpoint и регистрацию webhook при старте приложения
+- `@yaroslavfed/bot-sdk` содержит TypeScript client для Bot API, модели и проверку подписи webhook
+- `@yaroslavfed/bot-sdk-nestjs` добавляет NestJS-модуль, HTTP endpoint и регистрацию webhook при старте приложения
 
 ## Установка
 
 После публикации пакетов добавьте зависимости в проект:
 
 ```bash
-yarn add @elph-chat/bot-sdk @elph-chat/bot-sdk-nestjs
+yarn add @yaroslavfed/bot-sdk @yaroslavfed/bot-sdk-nestjs
 ```
 
 Для NestJS-проекта обычно достаточно второго пакета. Первый пригодится, если приложение не использует NestJS или если нужен прямой доступ к Bot API.
@@ -46,7 +46,7 @@ await app.listen(process.env.PORT ?? 3000);
 
 ```ts
 import { Module } from '@nestjs/common';
-import { ElphBotModule } from '@elph-chat/bot-sdk-nestjs';
+import { ElphBotModule } from '@yaroslavfed/bot-sdk-nestjs';
 
 @Module({
   imports: [
@@ -88,7 +88,7 @@ ElphBotModule.register({
 ```
 
 ```ts
-import { ElphBotClient } from '@elph-chat/bot-sdk';
+import { ElphBotClient } from '@yaroslavfed/bot-sdk';
 
 const client = new ElphBotClient({ apiUrl, token });
 await client.setWebhook({ url: webhookUrl, secret: webhookSecret });
@@ -173,7 +173,7 @@ await bot.sendFile({
 ## TypeScript client без NestJS
 
 ```ts
-import { ElphBotClient, parseWebhookUpdate } from '@elph-chat/bot-sdk';
+import { ElphBotClient, parseWebhookUpdate } from '@yaroslavfed/bot-sdk';
 
 const client = new ElphBotClient({ apiUrl, token });
 const update = parseWebhookUpdate(rawBody, signature, webhookSecret);
@@ -192,4 +192,10 @@ yarn build
 yarn test
 ```
 
-Пакетный scope `@elph-chat` нужно подтвердить до первой публикации в npm registry. До публикации примеры используют локальные workspace-зависимости.
+Пакеты публикуются в GitHub Packages владельца `yaroslavfed`. Для установки добавьте scope mapping в `.npmrc` проекта:
+
+```ini
+@yaroslavfed:registry=https://npm.pkg.github.com
+```
+
+Для private package добавьте в `.npmrc` personal access token с правом `read:packages`. До публикации примеры используют локальные workspace-зависимости.

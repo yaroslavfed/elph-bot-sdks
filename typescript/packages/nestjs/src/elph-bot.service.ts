@@ -1,6 +1,6 @@
 import { Injectable, OnApplicationBootstrap } from '@nestjs/common';
-import { ElphBotClient, parseWebhookUpdate } from '@elph-chat/bot-sdk';
-import type { ApiSuccess, BotUpdate, MenuCommands, ReplyKeyboard, SendFileRequest, SendMessageRequest } from '@elph-chat/bot-sdk';
+import { ElphBotClient, parseWebhookUpdate } from '@yaroslavfed/bot-sdk';
+import type { ApiSuccess, BotUpdate, MenuCommands, ReplyKeyboard, SendFileRequest, SendMessageRequest } from '@yaroslavfed/bot-sdk';
 
 import { ELPH_BOT_OPTIONS, type ElphBotModuleOptions } from './options.js';
 import { Inject } from '@nestjs/common';

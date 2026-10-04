@@ -1,6 +1,6 @@
 import { Controller, Headers, HttpCode, HttpException, InternalServerErrorException, Post, Req } from '@nestjs/common';
 
-import { WEBHOOK_SIGNATURE_HEADER, WebhookVerificationError } from '@elph-chat/bot-sdk';
+import { WEBHOOK_SIGNATURE_HEADER, WebhookVerificationError } from '@yaroslavfed/bot-sdk';
 import { ElphBotService } from './elph-bot.service.js';
 
 interface WebhookRequest {

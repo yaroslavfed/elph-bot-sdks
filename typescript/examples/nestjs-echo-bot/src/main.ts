@@ -2,8 +2,8 @@ import 'reflect-metadata';
 
 import { Injectable, Module } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
-import { ElphBotModule, ElphBotService } from '@elph-chat/bot-sdk-nestjs';
-import type { BotUpdate } from '@elph-chat/bot-sdk';
+import { ElphBotModule, ElphBotService } from '@yaroslavfed/bot-sdk-nestjs';
+import type { BotUpdate } from '@yaroslavfed/bot-sdk';
 
 let updates: UpdatesService;
 

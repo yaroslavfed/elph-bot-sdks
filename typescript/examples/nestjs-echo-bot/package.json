@@ -6,10 +6,10 @@
     "build": "node --input-type=module -e \"import { rmSync } from 'node:fs'; rmSync('dist', { recursive: true, force: true })\" && tsc -p tsconfig.json"
   },
   "dependencies": {
-    "@elph-chat/bot-sdk": "workspace:*",
-    "@elph-chat/bot-sdk-nestjs": "workspace:*",
     "@nestjs/common": "^11.0.0",
     "@nestjs/core": "^11.0.0",
+    "@yaroslavfed/bot-sdk": "workspace:*",
+    "@yaroslavfed/bot-sdk-nestjs": "workspace:*",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1"
   }
