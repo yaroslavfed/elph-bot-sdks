@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "updateId": "update-1",
+  "botId": "bot-1",
+  "chat": { "id": "chat-1", "type": "direct" },
+  "from": { "id": "user-1", "displayName": "Alice" },
+  "createdAt": "2026-10-04T00:00:00Z",
+  "message": { "id": "message-1", "text": "/ping" }
+}

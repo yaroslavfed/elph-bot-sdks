@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Elph BotUpdate v1",
+  "type": "object",
+  "required": ["schemaVersion", "updateId", "botId", "chat", "from", "createdAt"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "updateId": { "type": "string", "minLength": 1 },
+    "botId": { "type": "string", "minLength": 1 },
+    "chat": { "type": "object", "required": ["id", "type"], "properties": { "id": { "type": "string", "minLength": 1 }, "type": { "enum": ["direct", "group"] } } },
+    "from": { "type": "object", "required": ["id"], "properties": { "id": { "type": "string", "minLength": 1 }, "displayName": { "type": "string" } } },
+    "createdAt": { "type": "string", "format": "date-time" },
+    "message": { "type": "object", "required": ["id"], "properties": { "id": { "type": "string", "minLength": 1 }, "text": { "type": "string" } } },
+    "inlineCommand": { "type": "object", "required": ["sourceMessageId", "commandId"], "properties": { "sourceMessageId": { "type": "string", "minLength": 1 }, "commandId": { "type": "string", "minLength": 1 } } }
+  },
+  "oneOf": [
+    { "required": ["message"], "not": { "required": ["inlineCommand"] } },
+    { "required": ["inlineCommand"], "not": { "required": ["message"] } }
+  ]
+}

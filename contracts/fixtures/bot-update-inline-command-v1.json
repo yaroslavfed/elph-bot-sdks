@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "updateId": "update-2",
+  "botId": "bot-1",
+  "chat": { "id": "chat-1", "type": "direct" },
+  "from": { "id": "user-1" },
+  "createdAt": "2026-10-04T00:00:00Z",
+  "inlineCommand": { "sourceMessageId": "message-1", "commandId": "option-a" }
+}
